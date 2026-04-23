@@ -230,7 +230,7 @@ This project showcases:
 
 **Ajeet Prasad**
 📧 [ajeetkumarbarh52@gmail.com](mailto:ajeetkumarbarh52@gmail.com)
-🔗 https://www.linkedin.com/in/ajeet-kumar-223951326
+🔗 www.linkedin.com/in/ajeet-prasad-dev
 
 ---
 

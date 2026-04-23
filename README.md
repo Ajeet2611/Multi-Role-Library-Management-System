@@ -33,7 +33,7 @@ This project demonstrates **full-stack desktop application development**, includ
 
 ### 📊 Admin Dashboard
 
-![Dashboard](https://github.com/Ajeet2611/LibraryProject/blob/main/Admin%20Dashboard.png)
+![Dashboard](https://github.com/Ajeet2611/Multi-Role-Library-Management-System/blob/main/Admin%20Dashboard.png)
 
 ---
 

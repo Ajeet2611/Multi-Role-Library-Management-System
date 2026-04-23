@@ -29,7 +29,7 @@ This project demonstrates **full-stack desktop application development**, includ
 
 ### 🔑 Login Interface
 
-![Login](https://github.com/Ajeet2611/LibraryProject/blob/main/login%20window.png)
+![Login](https://github.com/Ajeet2611/Multi-Role-Library-Management-System/blob/main/login%20window.png)
 
 ### 📊 Admin Dashboard
 
@@ -121,7 +121,7 @@ Data Storage (Tables & Relations)
 ### 🔧 Setup Steps
 
 ```bash
-git clone https://github.com/Ajeet2611/LibraryProject.git
+git clone https://github.com/Ajeet2611/Multi-Role-Library-Management-System.git
 cd LibraryProject
 ```
 
@@ -209,7 +209,7 @@ LibraryProject/
 
 ## 🎥 Demo (Optional)
 
-👉 Add your demo video link here
+👉  demo video link here
 (YouTube / Drive)
 
 ---

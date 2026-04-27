@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Xee38PzHzeMMHL5F2-yPp"
+uri = "file://output/Library_Management_System_Presentation.pptx"
+type = "slides"
+title = "Library Management System — Hinglish Presentation (12 Slides)"

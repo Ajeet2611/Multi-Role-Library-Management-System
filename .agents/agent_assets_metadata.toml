@@ -12,3 +12,15 @@ id = "lfWR8DshmcpMYEL4RBDTH"
 uri = "file://output/Library_Management_System_Documentation.docx"
 type = "word_document"
 title = "Library Management System — Comprehensive Documentation Report (90+ Pages, Hinglish)"
+
+[[outputs]]
+id = "avNUCtyXwQo6wWAmQM0sl"
+uri = "file://assets/login_banner_light.png"
+type = "image"
+title = "Library Banner (Light Theme)"
+
+[[outputs]]
+id = "QOMgWuG6y9ImLzOr21eSw"
+uri = "file://assets/login_banner_dark.png"
+type = "image"
+title = "Library Banner (Dark Theme)"

@@ -25,6 +25,7 @@ from admin_issue_book import issue_book_window
 from admin_return_book import return_book_window
 from admin_user_activity import user_activity_window
 from admin_messages import admin_messages_window
+from admin_password_resets import open_password_resets_window
 
 
 user = None  # Global default to avoid NameError if referenced unexpectedly
@@ -85,6 +86,9 @@ def open_admin_dashboard(user):
             Image.open(os.path.join(ASSETS, name)).resize((size, size))
         )
 
+    admin_username = (user.get("Username")
+                      or user.get("UserID") or "ADMIN")
+
     buttons = [
         ("Add Book", "add.png", "#ff6f00", lambda: add_book_window(institution_id)),
         ("Show Books", "show.png", "#039be5", lambda: show_books_window(institution_id)),
@@ -95,16 +99,21 @@ def open_admin_dashboard(user):
         ("User Activity", "history.png", "#6a1b9a", lambda: user_activity_window(institution_id)),
         ("View Users", "user_d.png", "#0d47a1", lambda: view_users_window(institution_id)),
         ("User Messages", "history.png", "#7c3aed", lambda: admin_messages_window(institution_id)),
+        ("Reset Requests", "user.png", "#b8860b",
+         lambda: open_password_resets_window(
+             approver_username=admin_username,
+             institution_id=institution_id,
+             is_super_admin=False)),
 
         ("Logout", "logout.png", "#37474f", root.destroy),
     ]
 
     # ================= BUTTON POSITIONS =================
     positions = [
-        (0.25, 0.30), (0.50, 0.30), (0.75, 0.30),
-        (0.25, 0.48), (0.50, 0.48), (0.75, 0.48),
-        (0.25, 0.66), (0.50, 0.66), (0.75, 0.66),
-
+        (0.20, 0.28), (0.50, 0.28), (0.80, 0.28),
+        (0.20, 0.46), (0.50, 0.46), (0.80, 0.46),
+        (0.20, 0.64), (0.50, 0.64), (0.80, 0.64),
+        (0.50, 0.82),
     ]
 
     for (text, img, hover, cmd), (rx, ry) in zip(buttons, positions):
@@ -1683,6 +1692,9 @@ def open_admin_dashboard(user):
             Image.open(os.path.join(ASSETS, name)).resize((size, size))
         )
 
+    admin_username = (user.get("Username")
+                      or user.get("UserID") or "ADMIN")
+
     buttons = [
         ("Add Book", "add.png", "#ff6f00", lambda: add_book_window(institution_id)),
         ("Show Books", "show.png", "#039be5", lambda: show_books_window(institution_id)),
@@ -1693,17 +1705,21 @@ def open_admin_dashboard(user):
         ("User Activity", "history.png", "#6a1b9a", lambda: user_activity_window(institution_id)),
         ("View Users", "user_d.png", "#0d47a1", lambda: view_users_window(institution_id)),
         ("User Messages", "history.png", "#7c3aed", lambda: admin_messages_window(institution_id)),
-
+        ("Reset Requests", "user.png", "#b8860b",
+         lambda: open_password_resets_window(
+             approver_username=admin_username,
+             institution_id=institution_id,
+             is_super_admin=False)),
 
         ("Logout", "logout.png", "#37474f", root.destroy),
     ]
 
     # ================= BUTTON POSITIONS =================
     positions = [
-        (0.25, 0.30), (0.50, 0.30), (0.75, 0.30),
-        (0.25, 0.48), (0.50, 0.48), (0.75, 0.48),
-        (0.25, 0.66), (0.50, 0.66), (0.75, 0.66),
-
+        (0.20, 0.28), (0.50, 0.28), (0.80, 0.28),
+        (0.20, 0.46), (0.50, 0.46), (0.80, 0.46),
+        (0.20, 0.64), (0.50, 0.64), (0.80, 0.64),
+        (0.50, 0.82),
     ]
 
     for (text, img, hover, cmd), (rx, ry) in zip(buttons, positions):

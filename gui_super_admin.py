@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 from db import get_connection
 from security import hash_password
+from admin_password_resets import open_password_resets_window
+from password_reset_requests import pending_count
 
 
 def open_super_admin_dashboard(user):
@@ -161,6 +163,45 @@ def open_super_admin_dashboard(user):
         width=28,
         command=create_admin
     ).pack(pady=14)
+
+    # ================= PASSWORD RESET REQUESTS =================
+    frame3 = tk.LabelFrame(scroll_frame,
+                           text="🔑  Password Reset Requests",
+                           padx=25, pady=18,
+                           font=("Arial", 10, "bold"),
+                           fg="#0B1F3A")
+    frame3.pack(fill="x", padx=40, pady=10)
+
+    pending_n = pending_count(institution_id=None,
+                              include_admin_requests=True)
+    badge_text = (f"⚠ {pending_n} PENDING request(s) waiting for review"
+                  if pending_n > 0
+                  else "✓ No pending requests at the moment")
+    badge_color = "#B91C1C" if pending_n > 0 else "#059669"
+
+    tk.Label(frame3, text=badge_text,
+             font=("Arial", 10, "bold"),
+             fg=badge_color).pack(anchor="w", pady=(0, 6))
+    tk.Label(frame3,
+             text="Review Members & Admin password reset requests, "
+                  "approve them and generate temporary passwords.",
+             font=("Arial", 9), fg="#6B7280",
+             wraplength=560, justify="left").pack(anchor="w", pady=(0, 8))
+
+    approver_username = (user.get("Username")
+                         or user.get("UserID") or "SUPER_ADMIN")
+    tk.Button(
+        frame3,
+        text="Open Password Reset Manager",
+        width=32,
+        bg="#0B1F3A", fg="white",
+        font=("Arial", 10, "bold"),
+        relief="flat", cursor="hand2",
+        command=lambda: open_password_resets_window(
+            approver_username=approver_username,
+            institution_id=None,
+            is_super_admin=True)
+    ).pack(pady=4)
 
     # ================= LOGOUT =================
     tk.Button(
